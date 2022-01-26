@@ -1,4 +1,4 @@
-package beans;
+package controller.beans;
 
 // 자바 빈으로 만든 클래스(필드변수, 기본생성자(생략가능), get/set메소드 필요)
 public class User {
