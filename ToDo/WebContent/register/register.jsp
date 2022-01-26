@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!-- 맨아래에 java server ~ 를 html로 바꾸고 시작하기? -->
 <!DOCTYPE html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="<%=request.getContextPath() %>/css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="../css/bootstrap.min.css" /> 선생님이 적은것 -->
     <link rel="stylesheet" href="<%=request.getContextPath() %>/css/style.css" />
     <title>유저 등록</title>
   </head>

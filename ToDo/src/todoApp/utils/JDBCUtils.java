@@ -13,33 +13,35 @@ public class JDBCUtils {
     private static String jdbcUsername = "root";
     private static String jdbcPassword = "1234";
 
+    // DB연결 되는지 실험??? (Java application 클릭)
 //    public static void main(String[] args) {
 //		Connection conn = getConnection();
 //	}
     
+    // DB연결하는 Connection 메소드 만들기 
     public static Connection getConnection() {  	
     	Connection conn = null;
     	
     	try {
-			Class.forName("com.mysql.jdbc.Driver"); //0
-			conn = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword); //1
+			Class.forName("com.mysql.jdbc.Driver"); // 0번
+			conn = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword); // 1번. DB에 연결하고 정보를 conn으로 받기
 		} catch (ClassNotFoundException e) {
 			System.out.println("드라이버 클래스 못찾음");
-			return null;
+			
 		} catch (SQLException e) {
 			System.out.println("SQL 에러");
-			return null;
+			
 		}
     	//DB연결 성공 
     	System.out.println("연결성공!");
-    	return conn; //DB에 연결하여 커넥션을 받아옴
+    	return conn; //DB에 연결하여 커넥션을 받아옴 //Connection을 리턴한다.
     }
     
-    //자바 날짜를 SQL 날짜로 변경
+    //자바 날짜 -> SQL 날짜로 변경 // 자바 : LocalDate를 sql날짜로 
     public static Date getSQLDate(LocalDate date) {
     	return java.sql.Date.valueOf(date);
     }
-    //SQL 날짜를 자바 날짜로 변경
+    //SQL 날짜 -> 자바 날짜로 변경
     public static LocalDate getUtilDate(Date sqlDate) {
     	return sqlDate.toLocalDate();
     }
