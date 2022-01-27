@@ -18,7 +18,7 @@ import todoApp.model.LoginBean;
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	private LoginDao loginDao; //로그인 체크 Dao객체
+	private LoginDao loginDao; //로그인 체크 Dao객체 불러오기 ??????
 	
 	@Override
 	public void init() {
@@ -26,7 +26,8 @@ public class LoginController extends HttpServlet {
 	}
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("login/login.jsp");
+		// 로그인 페이지로 이동
+		RequestDispatcher dispatcher = request.getRequestDispatcher("login/login.jsp"); // 로그인폴더안의 로그인jsp페이지만 이동
 		dispatcher.forward(request, response);	
 	}
 
@@ -34,20 +35,20 @@ public class LoginController extends HttpServlet {
 		request.setCharacterEncoding("UTF-8"); //입력받을때 한글
 		response.setContentType("text/html;charset=UTF-8"); //출력할때 한글
 		// ID 패스워드를 파라메터로 입력받기
-		String username = request.getParameter("username");
+		String username = request.getParameter("username"); //아이디,비번을 입력받으면
 		String password = request.getParameter("password");
-		LoginBean loginBean = new LoginBean();
-		loginBean.setUsername(username);
+		LoginBean loginBean = new LoginBean(); // 로그인빈 객체 가져와서
+		loginBean.setUsername(username); // 넣기
 		loginBean.setPassword(password);
 		
-		if( loginDao.validate(loginBean) ) { //계정 있음 로그인 됨 => 할일 페이지로 forward
+		if( loginDao.validate(loginBean) ) { //계정 있으면(true) 로그인 됨 => 할 일 페이지로 forward
 			System.out.println("로그인 성공!");
 			RequestDispatcher dispatcher = request.getRequestDispatcher("todo/todo-list.jsp");
 			dispatcher.forward(request, response);			
 		} 
 		else { // 계정 없음 로그인 실패
 			System.out.println("로그인 실패!");
-			request.setAttribute("user", username);   //유저네임은 다시 보냄
+			request.setAttribute("user", username);   //유저네임은 다시 보냄 ?????????
 			request.setAttribute("message", "로그인 실패!");
 			// 로그인 실패 내용을 포워드로 다시 로그인 페이지에 보여주기
 			RequestDispatcher dispatcher = request.getRequestDispatcher("login/login.jsp");

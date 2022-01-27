@@ -18,11 +18,13 @@
         <div class="col-md-6 mx-auto">
           <h2>로그인</h2>
           <div class="alert alert-success center" role="alert">
+  			<!-- <퍼센트=session.getAttribute("message")> -->
             <p>${message}</p>
           </div>
           <form action="<%=request.getContextPath()%>/login" method="post">
             <div class="form-group">
               <label for="username">유저 이름 :</label>
+              <!-- <퍼센트=session.getAttribute("user")> -->
               <input type="text" class="form-control" name="username" value="${user}" required />
             </div>
             <div class="form-group">

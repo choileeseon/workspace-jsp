@@ -6,12 +6,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="<%=request.getContextPath() %>/css/bootstrap.min.css" />
-    <!-- <link rel="stylesheet" href="../css/bootstrap.min.css" /> 선생님이 적은것 -->
+    <!-- <link rel="stylesheet" href="../css/bootstrap.min.css" /> 정확한 주소가 아님. ????? -->
     <link rel="stylesheet" href="<%=request.getContextPath() %>/css/style.css" />
     <title>유저 등록</title>
   </head>
   <body>
-    <jsp:include page="../common/header.jsp" />
+  	<!-- header.jsp 파일을 붙여넣기 -->
+    <jsp:include page="../common/header.jsp" /> 
     <!-- 네브바 끝 -->
     <!-- 본문 -->
     <div class="container">
@@ -21,7 +22,7 @@
           <div class="alert alert-success center" role="alert">
             <p>${MESSAGE}</p>
           </div>
-          <form action="<%=request.getContextPath()%>/register" method="post">
+          <form action="<%=request.getContextPath()%>/register" method="post"> <!--firstName=김$lastName=선&... -->
             <div class="form-group">
               <label for="firstName">성 :</label>
               <input type="text" class="form-control" name="firstName" required />
@@ -38,7 +39,7 @@
               <label for="password">비밀번호 :</label>
               <input type="text" class="form-control" name="password" required />
             </div>
-            <div class="form-group mt-3">
+            <div class="form-group mt-2">
               <button type="submit" class="btn btn-outline-success">가입하기</button>
             </div>
           </form>
@@ -46,6 +47,7 @@
       </div>
     </div>
     <!-- 본문 끝 -->
+    <!-- footer.jsp 파일을 붙여넣기 -->
     <jsp:include page="../common/footer.jsp" />
 
     <script src="<%=request.getContextPath() %>/js/bootstrap.bundle.min.js"></script>
