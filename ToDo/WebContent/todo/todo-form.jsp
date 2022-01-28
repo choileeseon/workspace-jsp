@@ -47,10 +47,10 @@
           <div class="card card-body">
           <!-- 만약에 todo가 NULL이면 새로 입력 / todo가 있으면 업데이트 -->
           	<c:if test="${todo != null}">
-          		<form action="<%=request.getContextPath()%>/todos?action=update">
+          		<form action="<%=request.getContextPath()%>/todos?action=update"></form>
           	</c:if>
           	<c:if test="${todo == null}">
-          		<form action="<%=request.getContextPath()%>/todos?action=post">
+          		<form action="<%=request.getContextPath()%>/todos?action=post"></form>
           	</c:if>
           	
           	<h2>
@@ -86,7 +86,7 @@
           		<button type="submit" class="btn btn-info">저장</button>
           	</div>
           	
-          	</form> 
+          	 
           	        	
           </div>
         </div>

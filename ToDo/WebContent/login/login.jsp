@@ -20,6 +20,7 @@
           <div class="alert alert-success center" role="alert">
   			<!-- <퍼센트=session.getAttribute("message")> -->
             <p>${message}</p>
+            
           </div>
           <form action="<%=request.getContextPath()%>/login" method="post">
             <div class="form-group">

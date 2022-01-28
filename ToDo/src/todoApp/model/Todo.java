@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 // 할일을 저장할 자바 빈 객체
 public class Todo {
-	private Long id; //int보다 큰 숫자까지 표현
+	private Long id; // int보다 큰 숫자까지 표현
 	private String title;	//할일 제목
 	private String username;//유저 이름
 	private String description;// 내용

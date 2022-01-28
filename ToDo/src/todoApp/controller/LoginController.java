@@ -8,7 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
 
 import todoApp.dao.LoginDao;
 import todoApp.model.LoginBean;
@@ -48,11 +48,14 @@ public class LoginController extends HttpServlet {
 		} 
 		else { // 계정 없음 로그인 실패
 			System.out.println("로그인 실패!");
-			request.setAttribute("user", username);   //유저네임은 다시 보냄 ?????????
-			request.setAttribute("message", "로그인 실패!");
+			request.setAttribute("user", username);   //유저네임은 다시 보냄 = 안없어지고 그대로!
+			request.setAttribute("message", "로그인 실패!" + username + "  없음");
 			// 로그인 실패 내용을 포워드로 다시 로그인 페이지에 보여주기
 			RequestDispatcher dispatcher = request.getRequestDispatcher("login/login.jsp");
-			dispatcher.forward(request, response);				
+			dispatcher.forward(request, response);		
+
+			// 모든 입력데이터가 사라짐(페이지 새로열기)
+			// response.sendRedirect("login/login.jsp");
 		}
 		
 	}
