@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="<%=request.getContextPath() %>/css/bootstrap.min.css" />
     <!-- <link rel="stylesheet" href="../css/bootstrap.min.css" /> 정확한 주소가 아님. ????? -->
     <link rel="stylesheet" href="<%=request.getContextPath() %>/css/style.css" />
-    <title>유저 등록</title>
+    <title>유저 등록 수정</title>
   </head>
   <body>
   	<!-- header.jsp 파일을 붙여넣기 -->
