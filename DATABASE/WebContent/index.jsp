@@ -8,6 +8,6 @@
 </head>
 <body>
 	<p><a href="<%=request.getContextPath() %>/Controller?action=login">로그인</a>
-    <p><a href="<%=request.getContextPath() %>/Controller?action=login">가입하기</a>
+    <p><a href="<%=request.getContextPath() %>/Controller?action=creataccount">가입하기</a>
 </body>
 </html>

@@ -42,9 +42,9 @@ public class Account {
 	}
 
 	public boolean exists(String email) throws SQLException {
-		String sql = "SELECT COUNT(*) AS count FROM users WHERE email=? and password=?";
+		String sql = "SELECT COUNT(*) AS count FROM users WHERE email=?";
 		PreparedStatement pstmt = conn.prepareStatement(sql); // 프리페어드 sql문으로 준비
-		pstmt.setString(1, email);
+		pstmt.setString(1, email); //1의 뜻 첫번째 물음표 
 		ResultSet rs = pstmt.executeQuery(); // 준비된 sql을 실행
 
 		int count = 0;

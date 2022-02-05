@@ -104,15 +104,13 @@
       <input type="hidden" name="action" value="creataccount" >
       <h2>가입하기</h2>
       <div class="emailForm">
-        <input type="text" class="email" name="email" placeholder="Email" value="<%=request.getAttribute("email") %>")>
+        <input type="text" class="email" name="email" placeholder="Email" value="<%=request.getAttribute("email") %>">
       </div>
       <div class="passForm">
-        <input type="password" class="pw" name="password" placeholder="비밀번호" value="")
-          %>">
+        <input type="password" class="pw" name="password" placeholder="비밀번호" value="">
       </div>
       <div class="passForm">
-        <input type="password" class="pw" name="repeatpassword" placeholder="비밀번호 확인" value="")
-          %>">
+        <input type="password" class="pw" name="repeatpassword" placeholder="비밀번호 확인" value="">
       </div>
       <button type="submit" class="btn">가입하기</button>
       <div class="bottomText">

@@ -20,7 +20,6 @@ public class LoginController extends HttpServlet {
 	
 	private LoginDao loginDao; //로그인 체크 Dao객체 불러오기 ??????
 	
-	@Override
 	public void init() {
 		loginDao = new LoginDao();
 	}
