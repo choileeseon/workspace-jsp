@@ -1,8 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 
 <c:import url="header.jsp">
-	<c:param name="title" value="home"></c:param>
+	<c:param name="title" value="홈페이지"></c:param>
 </c:import>
 <sql:setDataSource var="ds" dataSource="jdbc/webshop" />
 <sql:query var="results" dataSource="${ds}" sql="select * from images limit 10" /> <!-- sql이 result에 저장 -->

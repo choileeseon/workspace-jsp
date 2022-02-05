@@ -29,7 +29,7 @@ public class Controller extends HttpServlet {
 		if(action == null || !actionMap.containsKey(action)) action = "home"; //이상하게 적어도 기본 home이라는 뜻
 		
 		request.getRequestDispatcher(actionMap.get(action)).forward(request, response); //home이면 home.jsp로 가게끔
-		//request.getRequestDispatcher("'/home.jsp").forward(request,response);
+		
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
