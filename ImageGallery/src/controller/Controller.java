@@ -20,11 +20,12 @@ public class Controller extends HttpServlet {
 		// 컨트롤로 생성자(시작할때 한번 실행)
 		actionMap.put("home", "/home.jsp"); //(key,value)값이 actionMap에 저장
 		actionMap.put("image", "/image.jsp");
+		actionMap.put("rate", "/image.jsp");
 		
 	}
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String action = request.getParameter("action");
+		String action = request.getParameter("action"); //action파라미터 값을 action에 저장(=key값)
 		//만약 액션 파라미터가 없거나 actionMap에 없으면 => home.jsp
 		if(action == null || !actionMap.containsKey(action)) action = "home"; //이상하게 적어도 기본 home이라는 뜻
 		
