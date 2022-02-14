@@ -3,6 +3,5 @@
   <display-name>CONTACTS</display-name>
   <welcome-file-list>
     <welcome-file>/home/index.jap</welcome-file>
-
   </welcome-file-list>
 </web-app>

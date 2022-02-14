@@ -19,7 +19,7 @@
 		  	</button>
 		  	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 		    	<div class="navbar-nav">
-		      		<a id="m-home" class="nav-link" href="<%= request.getContextPath() %>">Home </a> <!-- Home을 누르면 기본페이지로 -->
+		      		<a id="m-home" class="nav-link" href="<%= request.getContextPath() %>/home/index.jsp">Home</a> <!-- Home을 누르면 기본페이지로 --> <!-- ??? -->
 		      		<a id="m-contacts" class="nav-link" href="<%= request.getContextPath() %>/contact">contacts</a>
 		    	</div>
 		  	</div>

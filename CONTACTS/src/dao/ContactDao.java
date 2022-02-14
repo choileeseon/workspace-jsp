@@ -72,7 +72,7 @@ public class ContactDao {
 	
 	public Contact find(int id) {
 		
-		Contact  contact = new Contact();
+		Contact contact = new Contact();
 		
 		try {
 			conn = dataSource.getConnection();

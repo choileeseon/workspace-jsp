@@ -25,7 +25,6 @@
 			<img src="${pageContext.request.contextPath}/pics/${picName}">
 		</a>		
 	</td>
-	
 	<c:if test="${row.index+1 % tablewidth == 0 }"></tr></c:if> <!-- ??8장이 됐으면 닫힌다. -->
 </c:forEach>
 

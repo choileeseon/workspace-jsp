@@ -7,7 +7,8 @@
 		</div>
         
 		<div class="mb-3">
-			<button type="button" class="btn btn-primary btn-add" data-toggle="modal" data-target="#modal-add-update">
+			<!-- 부트스트랩에서 #modal-add-update -> 밑에 같은 id이름 버튼 열기-->
+			<button type="button" class="btn btn-primary btn-add" data-toggle="modal" data-target="#modal-add-update"> 
 				추 가 
 			</button>
 		</div>
@@ -24,7 +25,7 @@
                 </tr>
             </thead>
             <tbody>
-            <c:forEach var="contact" items="${contacts}">
+            <c:forEach var="contact" items="${contacts}"> <!-- 컨트롤러 페이지에 List<Contact> 의 'contacts'를 한줄씩 반복문으로 -->
             	<tr>
                 	<td><c:out value="${contact.id}" /></td>
                     <td><c:out value="${contact.name}" /></td>
@@ -45,7 +46,9 @@
             </tbody>
         </table>
     </div>
-    
+	
+    <!-- 아래는 모달(팝업창) html -->
+	<!-- 위와 id 같은 #modal-add-update. 버튼누를떄 팝업창 뜨는 것 -->
     <div class="modal fade" id="modal-add-update" tabindex="-1" aria-labelledby="addUpdateLabel" aria-hidden="true">
 	    <div class="modal-dialog">
 	        <div class="modal-content">
@@ -55,7 +58,7 @@
 	                    <span aria-hidden="true">&times;</span>
 	                </button>
 	            </div>
-	            <form autocomplete="nope">
+	            <form autocomplete="off" method="post"> <!-- contact.js에서 form태그를 찾고 cmd=post 해줌 -->
 		            <div class="modal-body">
 	                	<div class="form-group">
 		                    <label for="name">name</label>
@@ -73,8 +76,8 @@
 		                </div>
 		            </div>
 		            <div class="modal-footer">
-		            	<button type="submit" class="btn btn-success btn-action">저장</button>
-		                <button type="button" class="btn btn-secondary btn-action" data-dismiss="modal">취소</button>
+		            	<button type="submit" class="btn btn-success">저장</button>
+		                <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
 		            </div>
 	            </form>
 	        </div>
@@ -105,14 +108,12 @@
 	    </div>
 	</div>
 	
-	<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" crossorigin></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" crossorigin></script>
-	<script src="https://cdn.datatables.net/v/bs4/dt-1.10.24/datatables.min.js" crossorigin></script>
+	<jsp:include page="/includes/footer.jsp" />
+	
+	<script src="https://cdn.datatables.net/v/bs4/dt-1.10.24/datatables.min.js"></script>
 	<script>
 		$('.nav-link').removeClass('active');
 		$('#m-contacts').addClass('active');
-		var path = '<%= request.getContextPath() %>';
+		const path = '<%= request.getContextPath() %>';
 	</script>
 	<script src="assets/js/contact.js"></script>
-<jsp:include page="/includes/footer.jsp" />
